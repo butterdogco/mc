@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Server Select</title>
+        <link rel="shortcut icon" href="https://butterdogco.com/img/favicon.ico">
+        <style>
+            @keyframes fadeIn {
+              from {
+                filter: brightness(0%);
+                background: black;
+              }
+              to {
+                filter: brightness(100%);
+                background: rgb(40, 40, 60);
+              }
+            }
+            body {
+              font-family: 'Roboto', sans-serif;
+              background-color: rgb(40, 40, 60);
+              color: white;
+              transition: 1s ease;
+              animation: fadeIn 1s ease;
+              height: 100vh;
+              width: 100vw;
+              overflow: hidden;
+            }
+            h1 {
+              text-align: center;
+              font-size: 40px;
+            }
+            h1, h2, h3, h4, p, span {
+              cursor: default;
+            }
+            .item h1, .item h2, .item p, .item span {
+              cursor: pointer;
+            }
+            .item {
+              border-radius: 30px;
+              width: 150px;
+              height: 150px;
+              padding: 20px;
+              background-color: rgb(80, 80, 120);
+              text-align: center;
+              color: white;
+              text-decoration: none;
+              margin: 30px;
+              cursor: pointer;
+              transition: 0.5s ease;
+            }
+            .item p {
+              color: rgb(220, 220, 220);
+            }
+            .item:hover {
+              padding: 80px;
+              font-weight: bold;
+            }
+/*          .item p, .item h3 {
+              display: table;
+            } */
+            #survival {
+              background: linear-gradient(rgba(40,40,40,0.5), rgba(0,0,0,0.5)), url(https://media.wired.com/photos/62e0301fb014c7f5985e3405/4:3/w_1440,h_1080,c_limit/Minecraft-NFTs-Games.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+            #survival:hover ~ body {
+              background: linear-gradient(rgba(40,40,40,0.5), rgba(0,0,0,0.5)), url(https://media.wired.com/photos/62e0301fb014c7f5985e3405/4:3/w_1440,h_1080,c_limit/Minecraft-NFTs-Games.jpg);
+            }
+            #creative {
+              background: linear-gradient(rgba(40,40,40,0.5), rgba(0,0,0,0.5)), url(https://firstsportz.com/wp-content/uploads/2021/10/Minecraft-Bedrock-update-4.jpg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+            a {
+              text-decoration: inherit;
+              color: inherit;
+            }
+            .items:hover .item {
+              filter: blur(2px) brightness(80%);
+            }
+            .items:hover .item:hover {
+              filter: blur(0px) brightness(120%);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+
+            }
+            .items {
+              width: 200px;
+            }
+            #v1-8-8 {
+              position: fixed;
+              left: 10px;
+              top: 80px;
+            }
+            #v1-5-2 {
+              position: fixed;
+              left: 400px;
+              top: 80px;
+            }
+            #comingsoon {
+              background-image: url(https://cdn-icons-png.flaticon.com/512/8373/8373460.png);
+              background-size: cover;
+              filter: saturate(50%) brightness(60%);
+            }
+            .logo {
+              width: 100vw;
+              height: 160px;
+              object-fit: contain;
+              position: fixed;
+              left: 0px;
+              top: -30px;
+            }
+        </style>
+    </head>
+    <body>
+      <img class="logo" src="https://logos-world.net/wp-content/uploads/2020/05/Minecraft-Logo.png">
+      <div class="items" id="v1-8-8">
+        <h2>Java 1.8.8</h2>
+        <a href="https://survival.butterdogco.com" onclick="load();">
+          <div id="survival" data-hover-changer data-hover-color="rgb(30, 100, 30)" class="item">
+             <h2>Survival</h2>
+             <p>Survive, and create anything in the world of Minecraft.</p>
+          </div>
+        </a>
+        <a href="https://creative.butterdogco.com">
+          <div id="creative" class="item"  data-hover-changer data-hover-color="rgb(100, 100, 150)">
+            <h2 >Creative</h2>
+            <p>Create, destroy. Anything can be done. The only limit is your imagination.</p>
+          </div>
+        </a>
+      </div>
+      <div class="items" id="v1-5-2">
+        <h2>Java 1.5.2</h2>
+        <a href="#">
+          <div id="comingsoon" class="item">
+            <h2></h2>
+            <p></p>
+          </div>
+        </a>
+        <a href="#">
+          <div id="comingsoon" class="item">
+            <h2></h2>
+            <p></p>
+          </div>
+        </a>
+      </div>
+      <script>
+        alert("By using this, you agree to the Terms of Service. https://search.butterdogco.com/tos");
+        
+        const body = document.body;
+        const domNodes = document.querySelectorAll("[data-hover-changer]");
+        
+        for (domNode of domNodes) {
+          domNode.onmouseover = (event) => {
+            body.style.transition = "background 1s ease";
+            body.style.background = event.target.dataset.hoverColor || "rgb(40, 40, 60)";
+          }
+        
+          domNode.onmouseout = () => {
+            body.style.background = "rgb(40, 40, 60)";
+          }
+        }
+        
+        function load() {
+          document.body.style.filter = "brightness(0%)";
+          document.body.innerHTML = "";
+        }
+      </script>
+    </body>
+</html>
