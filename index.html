@@ -136,10 +136,32 @@
               background-size: cover;
               background-position: center;
             }
+            #alert {
+              width: 100vw;
+              height: 100vh;
+              margin: 0;
+              padding: 0;
+              position: fixed;
+              top: 0;
+              left: 0;
+              background: rgba(30, 30, 50, 0.5);
+              z-index: 5;
+              display: none;
+            }
+            #alert h1 {
+              position: fixed;
+              top: 45%;
+              left: 50%;
+              transform: translateX(-50%) translateY(-50%);
+              font-size: 50px;
+            }
         </style>
     </head>
     <body>
       <img class="logo" src="https://logos-world.net/wp-content/uploads/2020/05/Minecraft-Logo.png">
+      <div id="alert">
+        <h1>Not available yet. Sorry!</h1>
+      </div>
       <div class="items" id="v1-8-8">
         <h2>Java 1.8.8</h2>
         <a href="https://survival.butterdogco.com" onclick="load();">
@@ -155,9 +177,9 @@
           </div>
         </a>
         <a href="#">
-          <div id="anarchy" class="item">
-            <h2>Anarchy</h2>
-            <p>No rules. Fight, and build to stay alive.</p>
+          <div id="anarchy" class="item" onclick="soon()" data-hover-changer data-hover-color="rgb(80, 10, 10)">
+            <h2 data-hover-changer data-hover-color="rgb(80, 10, 10)">Anarchy</h2>
+            <p data-hover-changer data-hover-color="rgb(80, 10, 10)">No rules. Fight, and build to stay alive.</p>
           </div>
         </a>
       </div>
@@ -170,15 +192,15 @@
           </div>
         </a>
         <a href="https://www.dropbox.com/s/9ogem0oix4xi96q/faithful64pack-v1.4.0.zip?dl=0">
-          <div class="item" id="faithful">
-            <h2>Faithful x64</h2>
-            <p>Increases the texture resolution while keeping the Minecraft style.</p>
+          <div class="item" id="faithful" data-hover-changer data-hover-color="rgb(80, 50, 30)">
+            <h2 data-hover-changer data-hover-color="rgb(80, 50, 30)">Faithful x64</h2>
+            <p data-hover-changer data-hover-color="rgb(80, 50, 30)">Increases the texture resolution while keeping the Minecraft style.</p>
           </div>
         </a>
         <a href="https://guide-minecraft.com/resource-packs/1-8-8/">
-          <div class="item" id="guidemc">
-            <h2>Guide MC</h2>
-            <p>Find more packs here.</p>
+          <div class="item" id="guidemc" data-hover-changer data-hover-color="rgb(80, 80, 80)">
+            <h2 data-hover-changer data-hover-color="rgb(80, 80, 80)">Guide MC</h2>
+            <p data-hover-changer data-hover-color="rgb(80, 80, 80)">Find more packs here.</p>
           </div>
         </a>
       </div>
@@ -219,6 +241,15 @@
         function load() {
           document.body.style.filter = "brightness(0%)";
           document.body.innerHTML = "";
+        }
+        
+        function closeSoon() {
+          document.getElementById('alert').style.display = "none";
+        }
+        
+        function soon() {
+          document.getElementById('alert').style.display = "block";
+          setTimeout(closeSoon, 1500);
         }
       </script>
     </body>
