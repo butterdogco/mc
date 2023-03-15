@@ -1,242 +1,246 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Version Select</title>
-    <link rel="shortcut icon" href="https://butterdogco.com/img/favicon.ico">
-    <style>
-    
-      @keyframes slideIn {
-        0% {
-          top: 100vh;
-        }
-        100% {
-          top: 50%;
-        }
+
+<head>
+  <title>Version Select</title>
+  <link rel="shortcut icon" href="https://butterdogco.com/img/favicon.ico">
+  <style>
+    @keyframes slideIn {
+      0% {
+        top: 100vh;
       }
-      
-      body {
-        font-family: 'Helvitica', sans-serif;
-        background-color: rgb(30,30,40);
-        color: white;
-        transition: 0.2s ease;
-        height: 100vh;
-        width: 100vw;
-        margin: 0;
-        overflow: hidden;
-        background-image: url(https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/news/minecraft-rtx-world-conversion-guide/minecraft-rtx-world-conversion-ogimage.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      
-      .icon {
-        transition: 0.2s ease;
-        cursor: pointer;
-        overflow: hidden;
-      }
-      
-      .icon:hover {
-        filter: brightness(80%);
-      }
-      
-      .icon-S {
-        width: 15%;
-        height: 25%;
-        padding: 6%;
-        text-align: center;
-        background-color: rgba(200,200,200,0.3);
-        border-radius: 8%;
-        animation: slideIn 2s ease;
-      }
-      
-      .icon-L {
-        width: 21%;
-        height: 35%;
-        padding: 6%;
-        text-align: center;
-        border-radius: 8%;
-        animation: slideIn 0.8s ease;
-      }
-      
-      .icon-L h1 {
-        font-size: 230%;
-      }
-      
-      .icon-L p {
-        font-size: 100%;
-      }
-      
-      .icon-L:hover {
-        top: 48%;
-      }
-      
-      .icon-S:hover {
-        top: 49%;
-      }
-      
-      .icon-S img {
-        width: 130%;
-        height: 50%;
-        margin-left: -15%;
-      }
-      
-      .left {
-        transform: translateY(-50%);
-        position: fixed;
-        left: 3%;
+
+      100% {
         top: 50%;
       }
-      
-      .right {
-        transform: translateY(-50%);
-        position: fixed;
-        right: 3%;
-        top: 50%;
-      }
-      
-      .center {
-        transform: translate(-50%, -50%);
-        position: fixed;
-        left: 50%;
-        top: 50%;
-      }
-      
-      #five {
-        background-image: url(https://news-cdn.softpedia.com/images/news2/Minecraft-Pocket-Edition-0-8-0-Redstone-Update-404900-2.jpg);
-        background-size: cover;
-        background-position: center;
-      }
-      
-      #eight {
-        background-image: url(https://mcserver.butterdogco.com/img/bountiful.png);
-        background-size: cover;
-        background-position: center;
-        z-index: 30;
-      }
-      
-      #eight h1 {
-        margin-top: 75%;
-      }
-      
-      #five h1 {
-        margin-top: 80%;
-      }
-      
-      #five p {
-        width: 130%;
-        margin-left: -15%;
-      }
-      
-      #three {
-        background-image: url(img/WorldOfColor.webp);
-        background-size: cover;
-        background-position: right;
-        filter: brightness(50%) blur(1px);
-      }
-      
-      #three:hover {
-        filter: brightness(40%) blur(1px);
-      }
-      
-      #three h1 {
-        margin-top: 80%;
-      }
-      
-      .logo {
-        width: 30%;
-        margin-left: 35%;
-        margin-top: -3%;
-      }
-      
-      main {
-        backdrop-filter: brightness(50%) blur(5px);
-        height: 100vh;
-        width: 100vw;
-        margin: 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-      }
-      
-      .alert {
-        position: fixed;
-        background-color: rgba(250,250,255,0.3);
-        backdrop-filter: blur(12px);
-        border-radius: 30px;
-        height: 100vh;
-        width: 100vw;
-        text-align: center;
-        z-index: 999;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 50%;
-        font-size: 40px;
-        padding: 3%;
-        padding-top: 30%;
-      }
-      
-      .alert button {
-        padding: 30px;
-        font-size: 20px;
-        font-weight: bold;
-        background-color: rgba(250,250,255,0.3);
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 70px;
-        width: 180px;
-        margin: 30px;
-        transition: 0.2s ease;
-      }
-      
-      .alert button:hover {
-        background-color: rgba(240,240,245,0.5);
-      }
-      
-    </style>
-  </head>
-  <body>
-    <main>
-      <div class="alert" id="alert">
-        <h3>By using this website, you agree to <a href="https://search.butterdogco.com/tos" style="color: lightblue;cursor: pointer;">ButterDogCo's Terms of Service</a></h3>
-        <button onclick="agree();">Agree</button>
-        <button onclick="disagree();">Disagree</button>
-      </div>
-      <img src="https://res.cloudinary.com/zenbusiness/image/upload/v1670445040/logaster/logaster-2020-06-image14-3.png" class="logo">
+    }
+
+    body {
+      font-family: 'Helvitica', sans-serif;
+      background-color: rgb(30, 30, 40);
+      color: white;
+      transition: 0.2s ease;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      overflow: hidden;
+      background-image: url(https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/news/minecraft-rtx-world-conversion-guide/minecraft-rtx-world-conversion-ogimage.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .icon {
+      transition: 0.2s ease;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .icon:hover {
+      filter: brightness(80%);
+    }
+
+    .icon-S {
+      width: 15%;
+      height: 25%;
+      padding: 6%;
+      text-align: center;
+      background-color: rgba(200, 200, 200, 0.3);
+      border-radius: 8%;
+      animation: slideIn 2s ease;
+    }
+
+    .icon-L {
+      width: 21%;
+      height: 35%;
+      padding: 6%;
+      text-align: center;
+      border-radius: 8%;
+      animation: slideIn 0.8s ease;
+    }
+
+    .icon-L h1 {
+      font-size: 230%;
+    }
+
+    .icon-L p {
+      font-size: 100%;
+    }
+
+    .icon-L:hover {
+      top: 48%;
+    }
+
+    .icon-S:hover {
+      top: 49%;
+    }
+
+    .icon-S img {
+      width: 130%;
+      height: 50%;
+      margin-left: -15%;
+    }
+
+    .left {
+      transform: translateY(-50%);
+      position: fixed;
+      left: 3%;
+      top: 50%;
+    }
+
+    .right {
+      transform: translateY(-50%);
+      position: fixed;
+      right: 3%;
+      top: 50%;
+    }
+
+    .center {
+      transform: translate(-50%, -50%);
+      position: fixed;
+      left: 50%;
+      top: 50%;
+    }
+
+    #five {
+      background-image: url(https://news-cdn.softpedia.com/images/news2/Minecraft-Pocket-Edition-0-8-0-Redstone-Update-404900-2.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    #eight {
+      background-image: url(https://mcserver.butterdogco.com/img/bountiful.png);
+      background-size: cover;
+      background-position: center;
+      z-index: 30;
+    }
+
+    #eight h1 {
+      margin-top: 75%;
+    }
+
+    #five h1 {
+      margin-top: 80%;
+    }
+
+    #five p {
+      width: 130%;
+      margin-left: -15%;
+    }
+
+    #three {
+      background-image: url(img/WorldOfColor.webp);
+      background-size: cover;
+      background-position: right;
+      filter: brightness(50%) blur(1px);
+    }
+
+    #three:hover {
+      filter: brightness(40%) blur(1px);
+    }
+
+    #three h1 {
+      margin-top: 80%;
+    }
+
+    .logo {
+      width: 30%;
+      margin-left: 35%;
+      margin-top: -3%;
+    }
+
+    main {
+      backdrop-filter: brightness(50%) blur(5px);
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .alert {
+      position: fixed;
+      background-color: rgba(250, 250, 255, 0.3);
+      backdrop-filter: blur(12px);
+      border-radius: 30px;
+      height: 100vh;
+      width: 100vw;
+      text-align: center;
+      z-index: 999;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      font-size: 40px;
+      padding: 3%;
+      padding-top: 30%;
+    }
+
+    .alert button {
+      padding: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: rgba(250, 250, 255, 0.3);
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 70px;
+      width: 180px;
+      margin: 30px;
+      transition: 0.2s ease;
+    }
+
+    .alert button:hover {
+      background-color: rgba(240, 240, 245, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="alert" id="alert">
+      <h3>By using this website, you agree to <a href="https://search.butterdogco.com/tos"
+          style="color: lightblue;cursor: pointer;">ButterDogCo's Terms of Service</a></h3>
+      <button onclick="agree();">Agree</button>
+      <button onclick="disagree();">Disagree</button>
+    </div>
+    <img src="https://res.cloudinary.com/zenbusiness/image/upload/v1670445040/logaster/logaster-2020-06-image14-3.png"
+      class="logo">
+    <a href="https://mcserver.butterdogco.com/1.5.2">
       <div class="icon-S left icon" id="five">
-        <a href="https://mcserver.butterdogco.com/1.5.2">
-          <h1>1.5.2</h1>
-          <p>redstone update of minecraft, has singleplayer and multiplayer</p>
-        </a>
+        <h1>1.5.2</h1>
+        <p>redstone update of minecraft, has singleplayer and multiplayer</p>
       </div>
+    </a>
+    <a href="https://mcserver.butterdogco.com/1.8.8">
       <div class="icon-L center icon" id="eight">
-        <a href="https://mcserver.butterdogco.com/1.8.8">
-          <h1>1.8.8</h1>
-          <p>bountiful update of minecraft, multiplayer only</p>
-          <p style="margin-top:-5px;font-size:12px;"><b>recommended version</b></p>
-        </a>
+        <h1>1.8.8</h1>
+        <p>bountiful update of minecraft, multiplayer only</p>
+        <p style="margin-top:-5px;font-size:12px;"><b>recommended version</b></p>
       </div>
+    </a>
+    <a href="#">
       <div class="icon-S right icon" id="three">
-        <a href="#">
-          <h1>1.12</h1>
-          <p style="font-weight: bold;">in development</p>
-        </a>
+        <h1>1.12</h1>
+        <p style="font-weight: bold;">in development</p>
       </div>
-    </main>
-    <script>
-    
-      function agree() {
-        document.getElementById('alert').style.display = "none";
-      }
-      
-      function disagree() {
-        document.body.innerHTML = "<p style='font-size: 50px;text-align:center;background:black;'>You must agree to the terms to use this site!</p>";
-      }
-    </script>
-  </body>
+    </a>
+  </main>
+  <script>
+
+    function agree() {
+      document.getElementById('alert').style.display = "none";
+    }
+
+    function disagree() {
+      document.body.innerHTML = "<p style='font-size: 50px;text-align:center;background:black;'>You must agree to the terms to use this site!</p>";
+    }
+  </script>
+</body>
+
 </html>
